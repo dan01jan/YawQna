@@ -6,6 +6,7 @@ import MetaData from '../Layout/MetaData'
 import Loader from '../Layout/Loader'
 import Sidebar from './SideBar'
 // 
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -163,6 +164,9 @@ const ProductsList = () => {
 
     const deleteProductHandler = (id) => {
         dispatch(deleteProduct(id))
+        toast.success('Deleted Product Successfully', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
     }
 
     return (
